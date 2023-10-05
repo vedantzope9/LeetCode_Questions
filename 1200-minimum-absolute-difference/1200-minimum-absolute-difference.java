@@ -16,26 +16,15 @@ class Solution {
         for(int i=0;i<arr.length-1;i++)
         {
            
-            for(int j=i+1;j<arr.length;j++)
-            {
-                if(Math.abs(arr[j]-arr[i])==d)
+                if(Math.abs(arr[i+1]-arr[i])==d)
                 {
                     List<Integer> list= new ArrayList<Integer>();
                     list.add(arr[i]);
-                    list.add(arr[j]);
+                    list.add(arr[i+1]);
                     ans.add(list);
                  
                 }
 
-                if(Math.abs(arr[j]-arr[i])>d)
-                break;
-            }
-
-           // if(flg==1){
-               // ans.add(list);
-                //r++;
-               
-           // }
         }
         return ans;
     }
