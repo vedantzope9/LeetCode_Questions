@@ -14,23 +14,33 @@ class Solution {
 
         if(head==null)
         return head;
+    //Fast and slow pointer....
+    ListNode fast=head, slow=head;
 
-        int len=0;
-        while(temp!=null)
-        {
-            len++;
-            temp=temp.next;
-        }
-        temp=head;
-        if(len%2==0)
-        {
-            for(int i=0;i<len/2;i++)
-            temp=temp.next;
-        }
-        else{
-            for(int i=0;i<len/2;i++)
-            temp=temp.next;
-        }
-        return temp;
+    while(fast!=null && fast.next!=null)
+    {
+        fast=fast.next.next;
+        slow=slow.next;
+    }
+    return slow;
+
+    //basic method
+        // int len=0;
+        // while(temp!=null)
+        // {
+        //     len++;
+        //     temp=temp.next;
+        // }
+        // temp=head;
+        // if(len%2==0)
+        // {
+        //     for(int i=0;i<len/2;i++)
+        //     temp=temp.next;
+        // }
+        // else{
+        //     for(int i=0;i<len/2;i++)
+        //     temp=temp.next;
+        // }
+        // return temp;
     }
 }
